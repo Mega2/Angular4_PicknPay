@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <h1>Pick n Pay</h1>
+
+<div *ngIf="!address; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+        <h3>Please Provide us with the following delivery details</h3>
+
+        <label>Your contact number
+          <input type="text"  formControlName="contact_no" maxlength="10" placeholder="Must be 10 digits">
+        </label>
+        <!-- This goes underneath the contact number label -->
+<div class="alert" *ngIf="!rForm.controls['contact_no'].valid && rForm.controls['contact_no'].touched">You must specify a contact number that's 10 digits.</div><br>
+
+<label>Select your location
+<select formControlName="user_location">
+<option *ngFor="let user_location of user_locations" [value]="user_location.value">{{user_location.name}}</option>
+</select></label><br>
+<!-- This goes underneath the card user location label -->
+<div class="alert" *ngIf="!rForm.controls['user_location'].valid && rForm.controls['user_location'].touched">Please select a location.</div><br>
+
+<label>Desired delivery address
+          <input type="text" formControlName="address">
+        </label>
+        <!-- This goes underneath the address label -->
+<div class="alert" *ngIf="!rForm.controls['address'].valid && rForm.controls['address'].touched">{{ titleAlert }}</div><br>
+
+        <input type="submit" class="button expanded" value="Submit" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<footer>
+  This web application was designed by Moeketsi Makinta.
+</footer>
+</body>
+</html>

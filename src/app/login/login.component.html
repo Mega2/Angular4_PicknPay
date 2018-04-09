@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to the Pick n Pay Login Page</h1>
+    <table border="1" align="center">
+      <tr>
+      <img src="assets/images/Login.jpg">
+      </tr>
+    </table>
+    <br/><br/><br/><br/><br/>
+    <nav align="center">
+    <a routerLink="" routerLinkActive="active"><span class="glyphicon glyphicon-home"></span>Home</a>
+    <a routerLink="/register" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span>Register</a>
+  </nav><br/>
+<div class="container">
+    <h2 align="center">Please enter login credentials</h2>
+  <form>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input id="username" type="text" class="form-control" name="username" [(ngModel)]="user.username" placeholder="username" required>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Password" required>
+    </div><br>
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-info" (click)="LoginUser()">
+      <span class="glyphicon glyphicon-user"></span>Login
+      </button>
+    </div>
+  </form>
+  <br>
+</div>
+<br/>
+<footer>
+  This Angular 4 App was created by Moeketsi.
+</footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <h1 align="left" style="color:red"><img src="assets/images/Mega PnP-logo.png"></h1>
+    <nav>
+        <a routerLink="/UserDashboard" routerLinkActive="active" data-toggle="tooltip" data-placement="top" title="Continue shopping"><span class="glyphicon glyphicon-share"></span></a>
+ </nav>
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+        <h3>Please Provide us with the following payment details</h3>
+        <label>Card holder's Name
+          <input type="text" formControlName="name">
+        </label>
+        <!-- This goes underneath the Name label -->
+<div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div><br>
+
+<label>Card holder's Last name
+  <input type="text" formControlName="surname">
+</label>
+<!-- This goes underneath the Surame label -->
+<div class="alert" *ngIf="!rForm.controls['surname'].valid && rForm.controls['surname'].touched">{{ titleAlert }}</div><br>
+
+
+        <label>Card CVC number
+          <input type="text"  formControlName="CvC" maxlength="3" placeholder="Must be 3 digits">
+        </label>
+        <!-- This goes underneath the CVC label -->
+<div class="alert" *ngIf="!rForm.controls['CvC'].valid && rForm.controls['CvC'].touched">You must specify a CVC that's 3 digits.</div><br>
+
+<label>Card number
+  <input type="text"  formControlName="Card_no" maxlength="16" placeholder="Must be 16 digits">
+</label>
+<!-- This goes underneath the card number label -->
+<div class="alert" *ngIf="!rForm.controls['Card_no'].valid && rForm.controls['Card_no'].touched">You must specify a Card number that's 16 digits.</div><br>
+
+<label>Select your bank
+<select formControlName="bank">
+<option *ngFor="let bank of banks" [value]="bank.value">{{bank.name}}</option>
+</select></label><br>
+<!-- This goes underneath the card number label -->
+<div class="alert" *ngIf="!rForm.controls['bank'].valid && rForm.controls['bank'].touched">Please select a bank.</div><br>
+
+<label>Select your card type
+    <select formControlName="cardType">
+    <option *ngFor="let cardType of cardTypes" [value]="cardType.value">{{cardType.name}}</option>
+    </select></label><br>
+    <!-- This goes underneath the card number label -->
+    <div class="alert" *ngIf="!rForm.controls['cardType'].valid && rForm.controls['cardType'].touched">Please select a card type.</div><br>
+
+
+
+
+        <input type="submit" class="button expanded" value="Submit" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+<footer>
+  This web application was designed by Moeketsi Makinta.
+</footer>
+</body>
+</html>

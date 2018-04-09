@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table border="2" align="left">
+ <tr>
+    <p>
+    <img src="assets/images/Register.png">
+    </p>
+</tr>
+</table>
+<br/><br/><br/>
+<nav align="center">
+  <a routerLink="" routerLinkActive="active"><span class="glyphicon glyphicon-home"></span>Home</a>
+  <a routerLink="/login" routerLinkActive="active"><span class="glyphicon glyphicon-lock"></span>Login</a>
+</nav>
+<div class="container">
+  <h2>Please fill in the form for registration</h2>
+  <form>
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="name" type="text" class="form-control" name="name"  [(ngModel)]="user.name" placeholder="first name" required>
+        </div>
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="surname" type="text" class="form-control" name="surname"  [(ngModel)]="user.surname" placeholder="last name" required>
+        </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input id="email" type="text" class="form-control" name="email"  [(ngModel)]="user.email" placeholder="Email" required>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input id="username" type="text" class="form-control" name="username"  [(ngModel)]="user.username" placeholder="Username" required>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="password"  [(ngModel)]="user.password" placeholder="Password" required>
+    </div><br>
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-success" (click)="createUser()">
+        <span class="glyphicon glyphicon-user"></span>Submit
+      </button>
+    </div>
+  </form>
+  <br>
+</div>
+<footer>
+  This Angular 4 App was created by Moeketsi.
+</footer>
+</body>
+</html>

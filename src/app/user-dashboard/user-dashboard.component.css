@@ -1,0 +1,39 @@
+a {
+  font-size: 15px;
+  line-height: 1em;
+  display: inline-block;
+  text-decoration: none;
+  padding: 60px;
+  margin-top:0em; margin-bottom:0em;
+}
+
+h1 {
+  text-align: center;
+  padding: 40px 0;
+  color: black;
+  text-shadow: 0 0 11px white;
+  font-size: 60px;
+  margin-bottom:0em;
+}
+
+nav {
+  margin-top:-6em; margin-bottom:0em;
+}
+
+p {
+  margin-top:-10em; margin-bottom:0em; margin-right:-4em;
+  float: right;
+  padding: 4px 0px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 15px;
+  background-color: blue;
+  position: relative;
+  width: 100%;
+  height: 20px;
+  color: whitesmoke;
+  font-size: 14px;
+}
+

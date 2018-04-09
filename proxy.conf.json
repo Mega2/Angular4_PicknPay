@@ -1,0 +1,46 @@
+{
+    "/user/service": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/GetProducts": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/GetCarts": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/ProductCategory": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/UpdateCart": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/viewCart": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/DeleteCart": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/SavePayment": {
+      "target": "http://localhost:8181",
+      "secure": false
+    },
+
+    "/SaveCart": {
+      "target": "http://localhost:8181",
+      "secure": false
+    }
+  }

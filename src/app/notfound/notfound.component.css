@@ -1,0 +1,44 @@
+a {
+  font-size: 15px;
+  line-height: 1em;
+  display: inline-block;
+  text-decoration: none;
+  padding: 60px;
+  margin-top:0em; margin-bottom:0em;
+
+}
+
+h3 {
+  text-align: center;
+  padding: 40px 0;
+  color: black;
+  text-shadow: 0 0 11px white;
+  font-size: 60px;
+  margin-bottom:0em;
+}
+
+nav {
+  margin-top:-6em; margin-bottom:0em;
+
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  padding: 5px 5px;
+  background-color: blue;
+  position: relative;
+  width: 100%;
+  height: 5%;
+  color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+  padding: 40px 0px;
+  border-bottom: 2px solid #f7050a;
+  background: lightblue;
+  color: blue;
+  text-shadow: 0 0 10px black;
+  top: 0;
+}

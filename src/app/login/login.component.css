@@ -1,0 +1,38 @@
+h1 {
+  text-align: center;
+  padding: 40px 0px;
+  background: #F62459;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px black;
+}
+
+h2 {
+  text-align: center;
+  padding: 40px 0px;
+  color: black;
+  text-shadow: 0 0 10px rgb(252, 26, 26);
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  padding: 5px 5px;
+  background-color: blue;
+  position: relative;
+  width: 100%;
+  height: 5%;
+  color: whitesmoke;
+}
+
+a {
+  top: 0;
+  text-align: center;
+  padding: 10px 0px;
+  background: beige;
+  color: black;
+}
+
+nav {
+  margin-top:-6em; margin-bottom:0em;
+
+}

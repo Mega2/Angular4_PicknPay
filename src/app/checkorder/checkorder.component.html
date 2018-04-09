@@ -1,0 +1,63 @@
+<p>
+  checkorder works!
+</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <h1>Pick n Pay</h1>
+    <nav>
+        <a routerLink="/UserDashboard" routerLinkActive="active" data-toggle="tooltip" data-placement="top" title="Continue shopping"><span class="glyphicon glyphicon-share"></span></a>
+        <a routerLink="/cart" routerLinkActive="active" data-toggle="tooltip" data-placement="top" title="Go to cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+     </nav>
+     <p><a data-placement="top" title="Log out" (click)="onLogOut()">{{userLogedIn}}<span class="glyphicon glyphicon-off" (click)="onLogOut()"></span></a></p>
+
+<div *ngIf="!order; else forminfo" align="center">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+<label>  Select the order you want to view
+    <select formControlName="order">
+    <option *ngFor="let order of OrdersArray" [value]="order.order_id">{{order.order_id}}</option>
+    </select></label><br>
+    <!-- This goes underneath the order label -->
+    <div class="alert" *ngIf="!rForm.controls['order'].valid && rForm.controls['order'].touched">Please select an order you want to view.</div>
+<input type="submit" class="button" value="View order" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+<div *ngIf="showSelected">
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qnty</th>
+
+
+        </tr>
+        <tr *ngFor="let userOrder of userOrders; let i = index">
+            <td><span><img  src= "{{ userOrder.product_img }}" width="100" height="100"></span></td>
+            <td>{{userOrder.product_name}}</td>
+            <td>R{{userOrder.cart_price}}</td>
+            <td>{{userOrder.cart_quantity}}</td>
+     </tr>
+
+    </table>
+
+</div>
+
+<footer>
+  This web application was designed by Moeketsi Makinta.
+</footer>
+</body>
+</html>
